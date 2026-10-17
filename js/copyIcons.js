@@ -2,16 +2,18 @@
   var copyIcons = document.querySelectorAll(".bi-copy");
 
   for (i=0; i<copyIcons.length; i++) {
-    copyIcons[i].addEventListener('click', handleCopyIconClick);
+    let icon = copyIcons[i];
+    icon.addEventListener('click', handleCopyIconClick);
+    icon.addEventListener('hover', icon.setAttribute("fill", "#212529"))
   }
 
   function handleCopyIconClick(event) {
     var parent = event.target.parentElement;
 
-    var text = parent.querySelector("a").innerHTML;
+    var text = parent.querySelector("a .contact").innerHTML;
     navigator.clipboard.writeText(text);
 
-    var copiedNotif = parent.querySelector("span");
+    var copiedNotif = parent.querySelector(".copy-notif");
     flashElement(copiedNotif, 1000);
   }
 

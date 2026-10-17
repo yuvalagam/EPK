@@ -28,15 +28,20 @@ h3 {
 }
 
 #s1 {
-  width: fit-content;
+  max-width: fit-content;
 }
 
-#socials {
- margin-top: 10px;
+#social-icons {
+ margin-top: 16px;
 }
 
-.review-widget__review-bubble {
-  width: 20% !important;
+.social-icon {
+  opacity: 0.8;
+  margin-right: 40px;
+}
+
+.social-icon:hover {
+  opacity: 1;
 }
 
 .copy-notif {
@@ -44,8 +49,12 @@ h3 {
   font-size: 12px;
 }
 
+.bi-copy {
+  fill: #A5B9A4CD;
+}
+
 .bi-copy:hover {
-  color: #A5B9A4CD;
+  fill: #212529;
 }
 
 .gallery-img {
@@ -99,9 +108,9 @@ a:hover {
   text-decoration: none;
 }
 
-.row {
+/* .row {
   margin-bottom: 40px;
-}
+} */
 
 .yt {
   width: 30%;
@@ -114,6 +123,7 @@ a:hover {
 
 #gigsalad-reviews-widget {
   margin-top: 16px;
+  margin-bottom: 40px;
 }
 
 .review-widget__footer-write {
