@@ -2,24 +2,29 @@
   let carouselDiv = document.querySelector(".carousel-inner");
   let imagePaths = [];
 
-  ajaxUtils.sendGetRequest("images", (text) => {
-    imagePaths = parseImagePaths(text);
+  ajaxUtils.sendGetRequest("images/images.json", (text) => {
+    imagePaths = JSON.parse(text).map(
+    filename => `images/${filename}`
+  );
+
     insertImgs(imagePaths);
   });
 
-  function parseImagePaths(text) {
-    console.log(text);
-    let arr = text
-      .match(/<ul\b[^>]*>[\s\S]*?<\/ul>/i)[0]
-      .match(/<li\b[\s\S]*?<\/li>/gi)
+  // function parseImagePaths(text) {
+  //    console.log(text);
+  //   let arr = text
+  //     .match(/<ul\b[^>]*>[\s\S]*?<\/ul>/i)[0]
+  //     .match(/<li\b[\s\S]*?<\/li>/gi)
 
-    arr.shift();
-    for (i=0; i<arr.length; i++) {
-      arr[i]=arr[i].match(/href=["']([^"']+)["']/i)?.[1] || "";
-    }
-    console.log(arr);
-    return arr;
-  }
+  //   arr.shift();
+  //   for (i=0; i<arr.length; i++) {
+  //     arr[i]=arr[i].match(/href=["']([^"']+)["']/i)?.[1] || "";
+  //   }
+  //   console.log(arr);
+
+
+  //   return arr;
+  // }
 
   function insertImgs(imgPaths) {
     ajaxUtils.sendGetRequest("carouselImgSnippet.html", (text) => {
