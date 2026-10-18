@@ -16,6 +16,7 @@
     for (i=0; i<arr.length; i++) {
       arr[i]=arr[i].match(/href=["']([^"']+)["']/i)?.[1] || "";
     }
+    console.log(arr);
     return arr;
   }
 
