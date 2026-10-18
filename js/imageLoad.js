@@ -8,6 +8,7 @@
   });
 
   function parseImagePaths(text) {
+    console.log(text);
     let arr = text
       .match(/<ul\b[^>]*>[\s\S]*?<\/ul>/i)[0]
       .match(/<li\b[\s\S]*?<\/li>/gi)
