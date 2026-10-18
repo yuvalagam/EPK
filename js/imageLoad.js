@@ -2,7 +2,7 @@
   let carouselDiv = document.querySelector(".carousel-inner");
   let imagePaths = [];
 
-  ajaxUtils.sendGetRequest("/images/", (text) => {
+  ajaxUtils.sendGetRequest("images", (text) => {
     imagePaths = parseImagePaths(text);
     insertImgs(imagePaths);
   });
